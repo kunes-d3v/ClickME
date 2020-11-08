@@ -36,12 +36,6 @@ namespace CMClient
             var proxy = channel.CreateChannel(ep);
             var resp = proxy.cmRequest();
             MessageBox.Show(resp);
-            /*MessageBox.Show("You'v just clicked me.");
-            CMServer.CMServiceClient cmsc = new CMServiceClient();
-            cmsc.Open();
-            string req = cmsc.cmRequest();
-            MessageBox.Show(req);
-            cmsc.Close();*/
         }
     }
 }
