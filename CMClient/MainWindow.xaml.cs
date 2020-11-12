@@ -30,11 +30,21 @@ namespace CMClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // create base address
             var httpAddr = new Uri("http://127.0.0.1:9999/CMServer/CMService/srv");
+
+            // create a new channel
             var channel = new ChannelFactory<ICMService>(new WSHttpBinding());
+
+            // create the EP
             var ep = new EndpointAddress(httpAddr);
+
+            // assign the EP to the channel
             var proxy = channel.CreateChannel(ep);
+
+            // use the channel
             var resp = proxy.cmRequest();
+
             MessageBox.Show(resp);
         }
     }
